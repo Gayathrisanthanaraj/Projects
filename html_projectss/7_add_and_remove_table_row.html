@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add and remove the row from table</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+#mytable{
+width:200px;
+margin:50px auto;
+border-collapse:collapse;
+}
+#mytable td, th,tr {
+border:2px solid black;
+padding:15px;
+bgcolor:red;
+}
+</style>
+</head>
+<body>
+<table id="mytable" border='2px' cellpadding="5px" >
+<tbody id="table">
+<tr>
+<td>NAME</td>
+<th>PHONE NUMBER</th>
+<th>EMAIL ID</th>
+<th>delete</th>
+</tr>
+<tr>
+<td>A</td>
+<td><input type="text"></td>
+<td><input type="tel"></td>
+<td><button class="del">remove</button></td>
+</tr>
+<tr>
+<td>B</td><td><input type="text"></td>
+<td><input type="tel"></td>
+<th><button class="del">remove</button></th>
+</tr>
+<tr>
+<td>C</td>
+<td><input type="text"></td>
+<td><input type="tel"></td>
+<th><button class="del">remove</button></th></tr>
+</tr>
+
+
+</tbody>
+<td colspan="4"><button id="add">add row</button></td>
+</table>
+
+<script>
+$(document).ready(function(){
+ $("#add").click(function(){
+ $("#table").append('<tr><td>D</td><td><input type="text"></td><td><input type="tel"></td><th><button class="del">remove</button></th></tr>');
+});
+});
+</script>
+<script>
+$(document).ready(function(){
+$("#mytable").on('click','.del',function(){
+$ (this).closest('tr').remove();
+});
+});
+</script>
+</body>
+</html>

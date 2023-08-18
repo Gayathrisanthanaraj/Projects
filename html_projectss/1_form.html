@@ -1,0 +1,81 @@
+
+<html>
+<head>
+<title>form</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="pink" align="center">
+<form name="form1" onsubmit="return(validate());">
+<h2>Student's registration form</h2>
+<hr width="350" align="center" height="10">
+<table width="500" align="center">
+<tr>
+<td height="50">Name of student</td>
+<td><input name="name" type="text" placeholder="enter your name"></td>
+<p id="p1"></p>
+</tr>
+<tr>
+<td height="50">Father's name</td>
+<td><input id="name" type="text" placeholder="enter your father name"></td>
+</tr>
+<tr>
+<td height="50">Mother's name</td>
+<td><input id="name" type="text" placeholder="enter your mother name"></td>
+</tr>
+<tr>
+<td height="50">Age</td>
+<td><input id="num" type="number" placeholder="enter your age"></td>
+</tr>
+<tr>
+<td height="50">Phone number</td>
+<td><input id="num" type="number" placeholder="enter your phone number"></td>
+</tr>
+<tr>
+<td height="50">Gender</td>
+<td>
+<input type="radio" name="gender" value="male">
+<label>Male</label>
+<input type="radio" name="gender" value="female">
+<label>Female</label>
+</td>
+</tr>
+<tr>
+<td height="90" align="center"></td>
+<td><input type="submit" value="submit" ></td>
+</tr>
+</table>
+</form>
+
+<script>
+function validate(){
+var name=document.getElementById("name").value;
+var num=document.getElementById("num").value;
+
+
+if(name==""){
+alert("enter the name");
+document.form1.name.focus();
+return false;
+}
+if(!isNaN(name)){
+alert("enter the alphapets only");
+document.form1.name.value="";
+document.form1.name.focus();
+return false;
+}
+
+if(num<10||num>10){
+alert("enter 10 digit number only");
+document.form1.num.value="";
+document.form1.num.focus();
+return false;
+}
+return true;
+}
+</script>
+<hr width="350" align="center">
+</body>
+</html>
+

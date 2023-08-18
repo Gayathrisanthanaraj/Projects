@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>valid</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<h1>REGISTRATION FORM</h1>
+<body align="center">
+<div class="container">
+<form action="message.html">
+<div class="row">
+<div class="column">
+<table width="500" align="center">
+<tr>
+<td height="50">NAME</td>
+<td><input type="text" placeholder="Enter name" name="Enter name" required oninvalid="this.setCustomValidity('please enter your name')" oninput="this.setCustomValidity('')"></td>
+</tr>
+</div>
+<div class="column">
+<tr>
+<td height="50">PHONE NUMBER</td>
+<td><input type="tel" placeholder="Enter phone number" name="Enter phone number" required oninvalid="this.setCustomValidity('please enter your phone number')" oninput="this.setCustomValidity('')" pattern="[1-9]{1}[0-9]{9}"></td>
+</tr>
+</div>
+</table>
+<div class="column">
+<input type="submit" value="SUBMIT">
+</div>
+
+</div>
+</form>
+</body>
+</head>
